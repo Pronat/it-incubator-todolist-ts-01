@@ -6,9 +6,9 @@ type ButtonPropsType = {
 
 const Button = (props: ButtonPropsType) => {
     return (
-        <div>
+        <>
             <button>{props.title}</button>
-        </div>
+        </>
 
 
     // <button>All</button>

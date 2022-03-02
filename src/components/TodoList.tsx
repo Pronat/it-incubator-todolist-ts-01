@@ -1,5 +1,5 @@
 import React from 'react';
-import {TaskType} from "./App";
+import {TaskType} from "../App";
 import TodoListHeader from "./TodoListHeader";
 import Button from "./Button";
 
@@ -17,6 +17,8 @@ function TodoList(props: TodoListPropsType) {
                 <input/>
                 <button>+</button>
             </div>
+
+
             <ul>
                 <li><input type="checkbox" checked={props.tasks[0].isDone}/> <span>{props.tasks[0].title}</span></li>
                 <li><input type="checkbox" checked={props.tasks[1].isDone}/> <span>{props.tasks[1].title}</span></li>
