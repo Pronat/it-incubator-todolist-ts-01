@@ -2,6 +2,7 @@ import React from 'react';
 import {TaskType} from "../App";
 import TodoListHeader from "./TodoListHeader";
 import Button from "./Button";
+import TasksList from "./TasksList";
 
 type TodoListPropsType = {
     title: string;
@@ -16,15 +17,16 @@ function TodoList(props: TodoListPropsType) {
             <div>
                 <input/>
                 <button>+</button>
-            </div>
+                <TasksList tasks={props.tasks} />
+            {/*</div>*/}
 
 
-            <ul>
-                <li><input type="checkbox" checked={props.tasks[0].isDone}/> <span>{props.tasks[0].title}</span></li>
-                <li><input type="checkbox" checked={props.tasks[1].isDone}/> <span>{props.tasks[1].title}</span></li>
-                <li><input type="checkbox" checked={props.tasks[2].isDone}/> <span>{props.tasks[2].title}</span></li>
-            </ul>
-            <div>
+            {/*/!*<ul>*!/*/}
+            {/*/!*    <li><input type="checkbox" checked={props.tasks[0].isDone}/> <span>{props.tasks[0].title}</span></li>*!/*/}
+            {/*/!*    <li><input type="checkbox" checked={props.tasks[1].isDone}/> <span>{props.tasks[1].title}</span></li>*!/*/}
+            {/*/!*    <li><input type="checkbox" checked={props.tasks[2].isDone}/> <span>{props.tasks[2].title}</span></li>*!/*/}
+            {/*/!*</ul>*!/*/}
+            {/*<div>*/}
                 <Button title={"All"} />
                 <Button title={"Active"} />
                 <Button title={"Completed"} />
