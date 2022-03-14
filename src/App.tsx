@@ -35,7 +35,7 @@ function App() {
             <TodoList
                 removeTasks={removeTasks}
                 title = {todoListTitle_1}
-                tasks={tasks}/>
+                tasks={tasks} />
 
 
         </div>
