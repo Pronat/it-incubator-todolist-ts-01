@@ -10,7 +10,7 @@ type TodoListPropsType = {
     removeTasks: (id: number) => void
 }
 
-function TodoList(props: TodoListPropsType) {
+const TodoList = (props: TodoListPropsType) => {
     return (
 
         <div>
