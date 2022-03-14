@@ -7,6 +7,7 @@ import TasksList from "./TasksList";
 type TodoListPropsType = {
     title: string;
     tasks: Array<TaskType>
+    removeTasks: (id: number) => void
 }
 
 function TodoList(props: TodoListPropsType) {
@@ -17,16 +18,11 @@ function TodoList(props: TodoListPropsType) {
             <div>
                 <input/>
                 <button>+</button>
-                <TasksList tasks={props.tasks} />
-            {/*</div>*/}
+                <TasksList
+                    tasks={props.tasks}
+                    removeTasks={props.removeTasks}
+                />
 
-
-            {/*/!*<ul>*!/*/}
-            {/*/!*    <li><input type="checkbox" checked={props.tasks[0].isDone}/> <span>{props.tasks[0].title}</span></li>*!/*/}
-            {/*/!*    <li><input type="checkbox" checked={props.tasks[1].isDone}/> <span>{props.tasks[1].title}</span></li>*!/*/}
-            {/*/!*    <li><input type="checkbox" checked={props.tasks[2].isDone}/> <span>{props.tasks[2].title}</span></li>*!/*/}
-            {/*/!*</ul>*!/*/}
-            {/*<div>*/}
                 <Button title={"All"} />
                 <Button title={"Active"} />
                 <Button title={"Completed"} />
