@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import TodoList from "./components/TodoList";
 
@@ -15,17 +15,17 @@ function App() {
     // D - delete
     //BLL:
     const todoListTitle_1: string = "What to learn"
-
-
-    let tasks: Array<TaskType> = [
+    const [tasks, setTasks] = useState([         // #345
         {id: 1, title: "HTML&CSS", isDone: true},
         {id: 2, title: "JS/ES6", isDone: true},
         {id: 3, title: "React", isDone: false},
-    ]
+    ])
+
+
 
     const removeTasks = (id: number) => {
-        tasks = tasks.filter(t => t.id !== id)
-        console.log(tasks)
+       const filteredTasks = tasks.filter(t => t.id !== id)   // #456
+        setTasks(filteredTasks)   //это другой массив, поэтому Реакт перерисовал setTasks
     }
 
 
@@ -34,8 +34,8 @@ function App() {
         <div className="App">
             <TodoList
                 removeTasks={removeTasks}
-                title = {todoListTitle_1}
-                tasks={tasks} />
+                title={todoListTitle_1}
+                tasks={tasks}/>
 
 
         </div>
