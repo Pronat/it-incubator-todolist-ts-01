@@ -23,9 +23,9 @@ const TodoList = (props: TodoListPropsType) => {
                     removeTasks={props.removeTasks}
                 />
 
-                <Button title={"All"} />
-                <Button title={"Active"} />
-                <Button title={"Completed"} />
+                <Button title={"All"}/>
+                <Button title={"Active"}/>
+                <Button title={"Completed"}/>
             </div>
         </div>
     )
