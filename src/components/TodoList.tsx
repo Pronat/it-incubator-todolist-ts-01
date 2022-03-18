@@ -14,7 +14,7 @@ const TodoList = (props: TodoListPropsType) => {
     return (
 
         <div>
-            <TodoListHeader title={props.title} />
+            <TodoListHeader title={props.title}/>
             <div>
                 <input/>
                 <button>+</button>

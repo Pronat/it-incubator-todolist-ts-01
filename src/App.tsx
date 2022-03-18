@@ -36,8 +36,6 @@ function App() {
                 removeTasks={removeTasks}
                 title={todoListTitle_1}
                 tasks={tasks}/>
-
-
         </div>
     );
 }
