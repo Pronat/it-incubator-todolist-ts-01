@@ -7,7 +7,8 @@ import TasksList from "./TasksList";
 type TodoListPropsType = {
     title: string;
     tasks: Array<TaskType>
-    removeTasks: (id: number) => void
+    removeTasks: (id: string) => void
+    addTask: (title: string) => void
 }
 
 const TodoList = (props: TodoListPropsType) => {
