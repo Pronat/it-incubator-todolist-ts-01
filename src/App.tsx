@@ -9,6 +9,8 @@ export type TaskType = {
     isDone: boolean
 }
 
+export type FilterValueType = "all" | "active" | "completed"
+
 function App() {
     // C - create
     // R - read
@@ -26,11 +28,12 @@ function App() {
         {id: v1(), title: "Redax", isDone: false},
     ])
 
+
+    const [filter, setFilter] = useState<FilterValueType>("all")
     const removeTasks = (id: string) => {
         const filteredTasks = tasks.filter(t => t.id !== id)   // #456
         setTasks(filteredTasks)   //это другой массив, поэтому Реакт перерисовал setTasks
     }
-
     const addTask = (title: string) => {
         const newTask = {
             id: v1(),
@@ -44,6 +47,21 @@ function App() {
         setTasks([newTask, ...tasks])
     }
 
+    const changeFilter = (filter: FilterValueType) => {
+        setFilter(filter)
+    }
+
+   let taskForTodolist;
+    switch (filter) {
+        case "active":
+            taskForTodolist=tasks.filter(t=>t.isDone === false)
+            break;
+        case "completed":
+            taskForTodolist=tasks.filter(t=>t.isDone === true)
+            break;
+        default:
+            taskForTodolist=tasks
+    }
 
     //UI:
     return (
@@ -52,7 +70,8 @@ function App() {
                 addTask={addTask}
                 removeTasks={removeTasks}
                 title={todoListTitle_1}
-                tasks={tasks}
+                tasks={taskForTodolist}
+                changeFilter={changeFilter}
             />
 
         </div>
