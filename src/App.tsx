@@ -34,7 +34,7 @@ function App() {
     const addTask = (title: string) => {
         const newTask = {
             id: v1(),
-            title: title,
+            title,
             isDone: false,
         }
 

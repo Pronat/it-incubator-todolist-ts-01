@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {TaskType} from "../App";
 import TodoListHeader from "./TodoListHeader";
 import Button from "./Button";
@@ -13,12 +13,15 @@ type TodoListPropsType = {
 
 
 const TodoList = (props: TodoListPropsType) => {
-    const addTask = ()=> props.addTask('Super-Task!!!')
+    const [title, setTitle] = useState<string>("")
+    const addTask = ()=> props.addTask(title)
     return (
         <div>
             <TodoListHeader title={props.title}/>
             <div>
-                <input/>
+                <input
+                    value={title}
+                    onChange={(e)=>setTitle(e.currentTarget.value)}/>
                 <button onClick={
                     addTask
                 }>+
