@@ -11,14 +11,18 @@ type TodoListPropsType = {
     addTask: (title: string) => void
 }
 
-const TodoList = (props: TodoListPropsType) => {
-    return (
 
+const TodoList = (props: TodoListPropsType) => {
+    const addTask = ()=> props.addTask('Super-Task!!!')
+    return (
         <div>
             <TodoListHeader title={props.title}/>
             <div>
                 <input/>
-                <button>+</button>
+                <button onClick={
+                    addTask
+                }>+
+                </button>
                 <TasksList
                     tasks={props.tasks}
                     removeTasks={props.removeTasks}
