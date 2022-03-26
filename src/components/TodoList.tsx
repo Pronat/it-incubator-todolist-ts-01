@@ -31,18 +31,22 @@ const TodoList = (props: TodoListPropsType) => {
                             addTask()
                         }}}
                 />
-                <button onClick={
-                    addTask
-                }>+
-                </button>
+                <Button title={"+"} onClickHandler={addTask} />
+                {/*<button onClick={addTask}>+</button>*/}
                 <TasksList
                     tasks={props.tasks}
                     removeTasks={props.removeTasks}
                 />
 
-                <Button changeFilter={} title={"All"}/>
-                <Button title={"Active"}/>
-                <Button title={"Completed"}/>
+                <Button
+                    onClickHandler={()=>props.changeFilter("all")}
+                    title={"All"}/>
+                <Button
+                    onClickHandler={()=>props.changeFilter("active")}
+                    title={"Active"}/>
+                <Button
+                    onClickHandler={()=>props.changeFilter("completed")}
+                    title={"Completed"}/>
             </div>
         </div>
     )
